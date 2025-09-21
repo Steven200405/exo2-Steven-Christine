@@ -1,16 +1,17 @@
 <form [formGroup]="profileForm" class="d-flex flex-column align-items-center" >
     <label for="firstname">Prénom:</label>
-    <input id="firstname" type="text" formControlName="firstname" required>
+    <input id="firstname" type="text" formControlName="firstname">
     <label for="lastname">Nom:</label>
-    <input id="lastname" type="text" formControlName="lastname" required>
+    <input id="lastname" type="text" formControlName="lastname">
     <label for="age">Âge:</label>
     <input id="age" type="date" formControlName="age">
-    <input type="checkbox" formControlName="checkbox" >
+    <input type="checkbox" formControlName="checkbox" (click)="initEmail()">
     <label for="email">Email:</label>
     @if (!getCheckbox()) {
-        <input id="email" type="text" formControlName="email" required="true">
+        <input id="email" type="text" formControlName="email">
     }
     <label for="comment">Commentaire:</label>
-    <input id="comment" type="textarea" formControlName="comment" required>
+    <input id="comment" type="textarea" formControlName="comment">
+    <pre>{{ profileForm.value | json }}</pre>
     <button (click)="submitForm()" [disabled]="!profileForm.valid">Envoyer</button>
 </form>
