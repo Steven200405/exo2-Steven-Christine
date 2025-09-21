@@ -1,0 +1,16 @@
+<form [formGroup]="profileForm" class="d-flex flex-column align-items-center" >
+    <label for="firstname">Prénom:</label>
+    <input id="firstname" type="text" formControlName="firstname" required>
+    <label for="lastname">Nom:</label>
+    <input id="lastname" type="text" formControlName="lastname" required>
+    <label for="age">Âge:</label>
+    <input id="age" type="date" formControlName="age">
+    <input type="checkbox" formControlName="checkbox" >
+    <label for="email">Email:</label>
+    @if (!getCheckbox()) {
+        <input id="email" type="text" formControlName="email" required="true">
+    }
+    <label for="comment">Commentaire:</label>
+    <input id="comment" type="textarea" formControlName="comment" required>
+    <button (click)="submitForm()" [disabled]="!profileForm.valid">Envoyer</button>
+</form>
