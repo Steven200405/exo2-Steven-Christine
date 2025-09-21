@@ -1,11 +1,15 @@
 <div class="d-flex flex-column align-items-center">
-    <ul>
-        @for (film of filmsList; track film) {
-        <li><a (click)="afficherFilm(film.titre, film.image)">{{ film.titre }}</a></li>
+    <h1>Liste des films</h1>
+  <ul class="list-group">
+    @for (film of filmsList; track film) {
+        <a (click)="afficherFilm(film.titre, film.image)">
+            <li class="list-group-item list-group-item-action">{{ film.titre }}</li>
+        </a>
     }
-    </ul>
-    @if(titre && image){
-        <h1>{{titre}}</h1>
-        <img class="w-25 h-25" src="assets/{{image}}" alt="{{titre}}">
-    }
+  </ul>
+
+  @if(titre && image){
+    <h1>{{titre}}</h1>
+    <img class="img-film" src="assets/{{image}}" alt="{{titre}}">
+  }
 </div>
