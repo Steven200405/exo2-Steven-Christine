@@ -2,7 +2,7 @@
     <h1>Liste des films</h1>
   <ul class="list-group">
     @for (film of filmsList; track film) {
-        <a (click)="afficherFilm(film.titre, film.image)">
+        <a class="custom-a" (click)="afficherFilm(film.titre, film.image)">
             <li class="list-group-item list-group-item-action">{{ film.titre }}</li>
         </a>
     }
