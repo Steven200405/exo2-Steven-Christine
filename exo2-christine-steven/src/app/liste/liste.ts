@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Film } from '../interfaces/film';
 
 @Component({
   selector: 'app-liste',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class Liste {
   public titre: string = "";
   public image: string = "";
-  public filmsList = [
+  public filmsList: Film[] = [
     {titre:'Avatar', image:'avatar.jpg'},
     {titre:'Lilo & Stitch', image:'lilo_stitch.jpg'},
     {titre:'Conjuring', image:'conjuring.jpg'},

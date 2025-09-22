@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormService } from '../form-service/form-service';
+import { FormService } from '../services/form-service';
 
 @Component({
   selector: 'app-formulaire',
@@ -44,7 +44,11 @@ export class Formulaire {
 
   public submitForm(): void {
     alert("Le formulaire est valide");
-    this.service.contact = this.contactForm;
+    this.service.setFirstname(this.contactForm.get('firstname')?.value);
+    this.service.setLastname(this.contactForm.get('lastname')?.value);
+    this.service.setAge(this.contactForm.get('age')?.value);
+    this.service.setEmail(this.contactForm.get('email')?.value);
+    this.service.setComment(this.contactForm.get('comment')?.value);
     this.router.navigate(['/accueil']);
   }
 }

@@ -1,39 +1,30 @@
 <div class="container mt-4">
-
-    @if (!(contact.value.firstname && contact.value.lastname && contact.value.comment)) {
-      <div class="text-center">
-        <img src="assets/page404.png" class="img-fluid" alt="Page non trouvée">
-      </div>
-    }
-    @else {
       <h1 class="text-center my-5">Informations du dernier formulaire</h1>
-  
+
       <div class="d-flex justify-content-center">
         <table class="table table-bordered table-striped table-hover w-50 text-center">
           <tbody>
             <tr>
               <th scope="row">Prénom</th>
-              <td>{{ contact.value.firstname }}</td>
+              <td>{{ contact.firstname }}</td>
             </tr>
             <tr>
               <th scope="row">Nom</th>
-              <td>{{ contact.value.lastname }}</td>
+              <td>{{ contact.lastname }}</td>
             </tr>
             <tr>
               <th scope="row">Âge</th>
-              <td>{{ contact.value.age }}</td>
+              <td>{{ contact.age }}</td>
             </tr>
             <tr>
               <th scope="row">Email</th>
-              <td>{{ contact.value.email }}</td>
+              <td>{{ contact.email }}</td>
             </tr>
             <tr>
               <th scope="row">Commentaire</th>
-              <td>{{ contact.value.comment }}</td>
+              <td>{{ contact.comment }}</td>
             </tr>
           </tbody>
         </table>
       </div>
-    }
   </div>
-  
