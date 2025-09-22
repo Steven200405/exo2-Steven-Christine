@@ -1,6 +1,39 @@
-<div >
-    @if(!contact.value){
-        <p>404 Not found</p>
+<div class="container mt-4">
+
+    @if (!(contact.value.firstname && contact.value.lastname && contact.value.comment)) {
+      <div class="d-flex justify-content-center">
+        <img src="assets/page404.png" class="img-fluid" alt="Page non trouvée">
+      </div>
     }
-<pre>{{contact.value | json}}</pre>
-</div>
+    @else {
+      <h1 class="text-center my-5">Informations du dernier formulaire</h1>
+  
+      <div class="d-flex justify-content-center">
+        <table class="table table-bordered table-striped table-hover w-50 text-center">
+          <tbody>
+            <tr>
+              <th>Prénom</th>
+              <td>{{ contact.value.firstname }}</td>
+            </tr>
+            <tr>
+              <th>Nom</th>
+              <td>{{ contact.value.lastname }}</td>
+            </tr>
+            <tr>
+              <th>Âge</th>
+              <td>{{ contact.value.age }}</td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>{{ contact.value.email }}</td>
+            </tr>
+            <tr>
+              <th>Commentaire</th>
+              <td>{{ contact.value.comment }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+  

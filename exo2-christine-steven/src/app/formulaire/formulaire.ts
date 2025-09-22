@@ -1,12 +1,11 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormService } from '../form-service';
 
 @Component({
   selector: 'app-formulaire',
-  imports: [ReactiveFormsModule, JsonPipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './formulaire.html',
   styleUrl: './formulaire.scss'
 })
