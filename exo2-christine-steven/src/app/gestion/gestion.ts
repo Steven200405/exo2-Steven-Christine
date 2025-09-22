@@ -16,7 +16,7 @@ export class Gestion implements OnInit{
   }
 
   ngOnInit(): void {
-    if(!(this.service.getFirstname() && this.service.getLastname() && this.service.getComment() )){
+    if(!(this.contact.firstname && this.contact.lastname && this.contact.comment)){
       this.router.navigate(['/page404']);
     }
   }

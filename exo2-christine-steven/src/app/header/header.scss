@@ -7,12 +7,10 @@ nav{
 
 .navbar .nav-item .nav-link {
     border: none;
-    background: transparent;
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
-  
+
   .navbar .nav-item .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  

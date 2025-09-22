@@ -15,7 +15,7 @@ export class Liste {
     {titre:'Lilo & Stitch', image:'lilo_stitch.jpg'},
     {titre:'Conjuring', image:'conjuring.jpg'},
     {titre:'Fast & Furious', image:'fast_furious.jpg'},
-    {titre:'Indiana Jones', image:'indiana_jones.jpg'}
+    {titre:'Indiana Jones', image:'indiana_jones.jpg'},
   ];
 
   public afficherFilm(titre : string, image: string){
