@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire',
@@ -9,7 +10,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './formulaire.scss'
 })
 export class Formulaire {
-public profileForm = new FormGroup(
+  constructor(private router: Router){
+  }
+
+  public profileForm = new FormGroup(
     {
       firstname: new FormControl('',Validators.required),
       lastname: new FormControl('',Validators.required),
@@ -39,6 +43,7 @@ public profileForm = new FormGroup(
   }
 
   public submitForm(): void {
-    console.log(this.profileForm.get('firstname')?.value + 'has submitted');
+    alert("Le formulaire est valide");
+    this.router.navigate(['/accueil']);
   }
 }
