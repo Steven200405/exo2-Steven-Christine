@@ -2,6 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
+import { FormService } from '../form-service';
 
 @Component({
   selector: 'app-formulaire',
@@ -10,9 +11,6 @@ import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
   styleUrl: './formulaire.scss'
 })
 export class Formulaire {
-  constructor(private router: Router){
-  }
-
   public profileForm = new FormGroup(
     {
       firstname: new FormControl('',Validators.required),
@@ -23,6 +21,9 @@ export class Formulaire {
       comment: new FormControl('', Validators.required)
     }
   );
+
+  constructor(private router: Router, private service: FormService){
+  }
 
   public getCheckbox(): boolean | null | undefined {
     return this.profileForm.get('checkbox')?.value;
@@ -44,6 +45,7 @@ export class Formulaire {
 
   public submitForm(): void {
     alert("Le formulaire est valide");
+    this.service.contact = this.profileForm;
     this.router.navigate(['/accueil']);
   }
 }
