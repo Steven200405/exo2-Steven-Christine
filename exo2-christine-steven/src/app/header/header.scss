@@ -1,18 +1,18 @@
 nav{
-    height: 50px;
+    min-height: 50px;
     margin:0;
     padding: 0;
+    background-color: #dee2e6;
 }
 
 .navbar .nav-item .nav-link {
     border: none;
     background: transparent;
-    transition: background-color 0.3s ease;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
   
   .navbar .nav-item .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
   }
   

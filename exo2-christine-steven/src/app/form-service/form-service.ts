@@ -9,8 +9,8 @@ export class FormService {
       firstname: new FormControl(''),
       lastname: new FormControl(''),
       age: new FormControl(''),
-      checkbox: new FormControl(),
-      email: new FormControl(),
+      checkbox: new FormControl(false),
+      email: new FormControl(''),
       comment: new FormControl('')
   });
 

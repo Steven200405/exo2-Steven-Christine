@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormService } from '../form-service';
+import { FormService } from '../form-service/form-service';
 
 @Component({
   selector: 'app-formulaire',
@@ -10,7 +10,7 @@ import { FormService } from '../form-service';
   styleUrl: './formulaire.scss'
 })
 export class Formulaire {
-  public profileForm = new FormGroup(
+  public contactForm = new FormGroup(
     {
       firstname: new FormControl('',Validators.required),
       lastname: new FormControl('',Validators.required),
@@ -25,26 +25,26 @@ export class Formulaire {
   }
 
   public getCheckbox(): boolean | null | undefined {
-    return this.profileForm.get('checkbox')?.value;
+    return this.contactForm.get('checkbox')?.value?? false;
   }
 
   public initEmail(): void {
-    if(this.profileForm.get('checkbox')?.value == false ){
-            this.profileForm.get('email')?.removeValidators(Validators.required);
-            this.profileForm.get('email')?.removeValidators(Validators.email);
-            this.profileForm.patchValue({
-              email: "",
+    if(this.getCheckbox() == false ){
+            this.contactForm.get('email')?.removeValidators(Validators.required);
+            this.contactForm.get('email')?.removeValidators(Validators.email);
+            this.contactForm.patchValue({
+              email: '',
             });
     }
     else{
-      this.profileForm.get('email')?.setValidators([Validators.required, Validators.email]);
+      this.contactForm.get('email')?.setValidators([Validators.required, Validators.email]);
     }
-    this.profileForm.updateValueAndValidity();
+    this.contactForm.updateValueAndValidity();
   }
 
   public submitForm(): void {
     alert("Le formulaire est valide");
-    this.service.contact = this.profileForm;
+    this.service.contact = this.contactForm;
     this.router.navigate(['/accueil']);
   }
 }

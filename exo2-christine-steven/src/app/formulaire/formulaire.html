@@ -1,12 +1,12 @@
 <div class="d-flex flex-column justify-content-center align-items-center m-5">
     <h1>Fomulaire de contact</h1>
-    <form [formGroup]="profileForm" class="bg-light p-4 rounded shadow-sm w-50" >
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="bg-light p-4 rounded shadow-sm w-50" >
         <label for="firstname" class="form-label">Prénom</label>
         <input id="firstname" type="text" formControlName="firstname" class="form-control">
         <label for="lastname" class="form-label">Nom</label>
         <input id="lastname" type="text" formControlName="lastname" class="form-control">
         <label for="age" class="form-label">Âge</label>
-        <input id="age" type="date" formControlName="age" class="form-control">
+        <input id="age" type="number" min="0" formControlName="age" class="form-control">
         <label for="checkbox" class="me-1">Hide</label>
         <input type="checkbox" formControlName="checkbox" (click)="initEmail()"> <br>
         @if (!getCheckbox()) {
@@ -15,6 +15,6 @@
         }
         <label for="comment" class="form-label">Commentaire</label>
         <textarea id="comment" placeholder="Écrivez votre texte ici" formControlName="comment" class="form-control"></textarea>
-        <button class="btn btn-info mt-1 d-block mx-auto" (click)="submitForm()" [disabled]="!profileForm.valid">Envoyer</button>
+        <button type ="submit" class="btn btn-info mt-1 d-block mx-auto" [disabled]="!contactForm.valid">Envoyer</button>
     </form>
 </div>

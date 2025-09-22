@@ -1,7 +1,7 @@
 <div class="container mt-4">
 
     @if (!(contact.value.firstname && contact.value.lastname && contact.value.comment)) {
-      <div class="d-flex justify-content-center">
+      <div class="text-center">
         <img src="assets/page404.png" class="img-fluid" alt="Page non trouvée">
       </div>
     }
@@ -12,23 +12,23 @@
         <table class="table table-bordered table-striped table-hover w-50 text-center">
           <tbody>
             <tr>
-              <th>Prénom</th>
+              <th scope="row">Prénom</th>
               <td>{{ contact.value.firstname }}</td>
             </tr>
             <tr>
-              <th>Nom</th>
+              <th scope="row">Nom</th>
               <td>{{ contact.value.lastname }}</td>
             </tr>
             <tr>
-              <th>Âge</th>
+              <th scope="row">Âge</th>
               <td>{{ contact.value.age }}</td>
             </tr>
             <tr>
-              <th>Email</th>
+              <th scope="row">Email</th>
               <td>{{ contact.value.email }}</td>
             </tr>
             <tr>
-              <th>Commentaire</th>
+              <th scope="row">Commentaire</th>
               <td>{{ contact.value.comment }}</td>
             </tr>
           </tbody>
